@@ -8,6 +8,9 @@ const Nav = () => {
       <li>
         <NavLink to={'/entry'}>Data Entry</NavLink>
       </li>
+      <li>
+        <NavLink to={'/details'}>Details</NavLink>
+      </li>
     </>
   );
   return (
