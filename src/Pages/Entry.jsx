@@ -1,7 +1,17 @@
+import setDataToLocalStorage from '../utility/setDataToLocalStorage';
+
 const Entry = () => {
   const handleEntrySubmit = (e) => {
     e.preventDefault();
-    console.log('from submitted');
+    const present = parseInt(e.target.present.value);
+    const cost = parseInt(e.target.cost.value);
+    const day = parseInt(e.target.day.value);
+    const data = {
+      day,
+      present,
+      cost,
+    };
+    setDataToLocalStorage(data);
   };
   return (
     <div className="h-[80vh] w-full bg-[17B3C1]">
@@ -16,6 +26,7 @@ const Entry = () => {
               type="number"
               name="present"
               id="present"
+              required
               placeholder="Mill On Border"
             />
           </div>
@@ -27,6 +38,7 @@ const Entry = () => {
               type="number"
               name="cost"
               id="cost"
+              required
               placeholder="Enter Amount here...."
             />
           </div>
@@ -38,6 +50,7 @@ const Entry = () => {
               type="number"
               name="day"
               id="day"
+              required
               placeholder="Enter Day here.."
             />
           </div>
